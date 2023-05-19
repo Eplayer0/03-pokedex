@@ -1,12 +1,13 @@
 import { BadRequestException, Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
+import { ConfigService } from '@nestjs/config';
+
 import { isValidObjectId, Model } from 'mongoose';
 import { Pokemon } from './entities/pokemon.entity';
 
 import { CreatePokemonDto } from './dto/create-pokemon.dto';
 import { UpdatePokemonDto } from './dto/update-pokemon.dto';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
-import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class PokemonService {
